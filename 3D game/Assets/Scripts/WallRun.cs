@@ -11,7 +11,7 @@ public class WallRun : MonoBehaviour
     [SerializeField] float minimumJumpHeight = 1.5f;
 
     [Header("Wall Running")]
-    [SerializeField] private float wallRunGravity = 1f;
+    [SerializeField] private float wallRunGravity = 0.1f;
     [SerializeField] private float wallRunJumpForce = 6f;
 
     [Header("Camera")]
@@ -43,8 +43,8 @@ public class WallRun : MonoBehaviour
 
     void CheckWall()
     {
-        wallLeft = Physics.Raycast(transform.position, -orientation.right, wallDistance);
-        wallRight = Physics.Raycast(transform.position, orientation.right, wallDistance);
+        wallLeft = Physics.Raycast(transform.position - new Vector3(0,1,0), -orientation.right, wallDistance);
+        wallRight = Physics.Raycast(transform.position - new Vector3(0,1,0), orientation.right, wallDistance);
     }
 
     private void Update() 

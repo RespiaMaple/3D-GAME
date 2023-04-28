@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {   
     [SerializeField] Transform orientation;
+    public float bounceForce = 30f;
 
     [Header("PlayerMovement")]
     public float moveSpeed = 6f;
@@ -19,6 +20,11 @@ public class PlayerMovement : MonoBehaviour
     [Header("Jump")]
     public float jumpForce = 5f;
 
+    [Header("Crouch")]
+    public float crouchSpeed = 2f;
+    public float crouchYSclae;
+    public float startSclae;
+
     [Header("Drag")]
     public float groundDrag = 6f;
     public float airDrag = 2f;
@@ -26,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Keybinds")]
     [SerializeField] KeyCode jumpKey = KeyCode.Space;
     [SerializeField] KeyCode sprintKey = KeyCode.LeftShift;
+    [SerializeField] KeyCode crouchKey = KeyCode.LeftControl;
 
     [Header("Ground Detection")]
     [SerializeField] Transform groundCheck;
@@ -42,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 moveDirection;
     Vector3 slopeMoveDirection;
 
-    Rigidbody rb;
+    public Rigidbody rb;
 
     RaycastHit slopeHit;
 
@@ -50,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        startSclae = transform.localScale.y;
     }
 
     private void Update() 
@@ -58,12 +66,14 @@ public class PlayerMovement : MonoBehaviour
 
         MyInput();
         ControlDrag();
-        ControlSpeed();
+        Sprint();
+        Crouch();
 
         if (Input.GetKeyDown(jumpKey) && isGrounded)
         {
             Jump();
         }
+
 
         slopeMoveDirection = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal);//Vector3.ProjectOnPlane(要投影的向量,斜面的法向量)
     }
@@ -84,6 +94,14 @@ public class PlayerMovement : MonoBehaviour
         return false;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "JumpPad")
+        {
+            rb.velocity = new Vector3(rb.velocity.x, bounceForce, rb.velocity.z);
+        }
+    }
+
     void MyInput()
     {
         horizontalMovement = Input.GetAxisRaw("Horizontal");
@@ -98,7 +116,22 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(transform.up * Mathf.Sqrt (jumpForce * -2f * Physics.gravity.y), ForceMode.Impulse);
     }
 
-    void ControlSpeed()
+    void Crouch()
+    {
+        if (Input.GetKey(crouchKey) && isGrounded)
+        {
+            transform.localScale = new Vector3(transform.localScale.x, crouchYSclae, transform.localScale.z);
+            rb.AddForce(Vector3.down * 2f, ForceMode.Impulse);
+            moveSpeed = crouchSpeed;
+        }
+        if (Input.GetKeyUp(crouchKey))
+        {
+            transform.localScale = new Vector3(transform.localScale.x, startSclae, transform.localScale.z);
+            moveSpeed = walkSpeed;
+        }
+    }
+
+    void Sprint()
     {
         if (Input.GetKey(sprintKey) && isGrounded)
         {
