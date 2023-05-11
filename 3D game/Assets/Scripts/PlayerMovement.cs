@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerMovement : MonoBehaviour
 {   
@@ -103,6 +104,11 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "JumpPad")
         {
             rb.velocity = new Vector3(rb.velocity.x, bounceForce, rb.velocity.z);
+            AudioSource audio = other.GetComponent<AudioSource>();
+            if (audio != null && audio.clip != null)
+            {
+                audio.Play();
+            }
         }
     }
 

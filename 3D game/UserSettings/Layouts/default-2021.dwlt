@@ -190,8 +190,8 @@ MonoBehaviour:
     y: 0
     width: 266
     height: 556
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -216,8 +216,8 @@ MonoBehaviour:
     y: 0
     width: 599
     height: 556
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -425,9 +425,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ecdfffff
-      m_LastClickedID: -8212
-      m_ExpandedIDs: b0e0ffff9ae1ffff7af4ffff38fbffff705c0000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 7c94ffffd294ffffba96ffffcc96ffff06a8ffffaaadfffffeadffffecaffffffcafffff6ed8ffff32dcffff26ddffff1ae5ffff76eafffffaebffffdeefffffb4f0ffffbef1ffff22f9ffff38fbffff406f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -528,7 +528,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -709,9 +709,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -3.8648806, y: 4.37129, z: -2.6850672}
+    m_Target: {x: 3.011856, y: 0.29517746, z: 81.965935}
     speed: 2
-    m_Value: {x: -3.8648806, y: 4.37129, z: -2.6850672}
+    m_Value: {x: 3.011856, y: 0.29517746, z: 81.965935}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -758,13 +758,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.020576522, y: 0.95542085, z: -0.2864733, w: -0.06861844}
+    m_Target: {x: -0.23840533, y: 0.13985373, z: -0.034713928, w: -0.9604297}
     speed: 2
-    m_Value: {x: -0.020576237, y: 0.9554076, z: -0.28646934, w: -0.06861749}
+    m_Value: {x: -0.23840217, y: 0.13985188, z: -0.03471347, w: -0.96041703}
   m_Size:
-    m_Target: 11.008571
+    m_Target: 7.970827
     speed: 2
-    m_Value: 11.008571
+    m_Value: 7.970827
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -830,22 +830,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/SFX
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/SFX
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\User\Documents\GitHub\3D-GAME\3D game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0c590000
-    m_LastClickedID: 22796
-    m_ExpandedIDs: 00000000fc580000fe580000005900000259000000ca9a3b
+    m_SelectedIDs: 94590000
+    m_LastClickedID: 22932
+    m_ExpandedIDs: 000000007e59000080590000825900008459000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -873,7 +873,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fc580000fe5800000059000002590000
+    m_ExpandedIDs: 000000007e590000805900008259000084590000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
