@@ -45,6 +45,9 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMovement;
     float verticalMovement;
 
+    public Transform respawnPoint;
+    public float respawnHeight = -10f;
+
 
     Vector3 moveDirection;
     Vector3 slopeMoveDirection;
@@ -63,7 +66,8 @@ public class PlayerMovement : MonoBehaviour
     private void Update() 
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance,groundLayer); //CheckSphere(Vector3 position, float radius, int layerMask)
-
+        
+        Respawn();
         MyInput();
         ControlDrag();
         Sprint();
@@ -176,4 +180,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void Respawn()
+    {
+        if (transform.position.y < respawnHeight)
+        {
+            transform.position = respawnPoint.position;
+        }
+    }
 }
