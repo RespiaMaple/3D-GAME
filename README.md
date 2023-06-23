@@ -1,4 +1,4 @@
-# 3D GAME
+# Parkour game
 
 學習Unity引擎3D遊戲的開發，製作跑酷遊戲
 
